@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+	echo "You had one job...username"
+	exit
+fi
+sudo adduser $1
+sudo cp ~/MUSIC_CHEAT_SHEET /home/$1/
+sudo chown $1:$1 /home/$1/MUSIC_CHEAT_SHEET
+sudo -H -u $1 bash -c 'mkdir ~/.ssh'
+sudo -H -u $1 bash -c 'vim ~/.ssh/authorized_keys'
+sudo usermod -aG audio $1
+exit
