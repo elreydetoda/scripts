@@ -10,7 +10,8 @@ echo "$start_time Start Lock" | sudo tee -a /var/log/auth.log
 
 xset dpms 5 5 5
 xset dpms force off &
-i3lock -d -u -i "/home/$USER/pictures/lockscreen.png" -p win -e -n 
+i3lock -d -u -i "/home/$USER/pictures/lockscreen.png" -p win -e -n &
+systemctl suspend
 revert
 failed="$(tail -n+$(cat /var/log/auth.log | grep -a -n "$start_time Start Lock" | cut -d ':' -f 1) /var/log/auth.log |  grep unix_chkpwd |  wc -l)"
 echo $failed

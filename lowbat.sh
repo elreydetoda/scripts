@@ -2,7 +2,7 @@
 
 SLEEP_TIME=5   # Default time between checks.
 SAFE_PERCENT=30  # Still safe at this level.
-DANGER_PERCENT=15  # Warn when battery at this level.
+DANGER_PERCENT=10  # Warn when battery at this level.
 CRITICAL_PERCENT=5  # Hibernate when battery at this level.
 
 NAGBAR_PID=0
